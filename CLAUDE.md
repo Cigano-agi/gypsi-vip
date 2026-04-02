@@ -4,7 +4,7 @@
 ## Contexto de engenharia para o Claude Code
 
 > **Última atualização:** 2026-04-02
-> **Sessão anterior encerrou em:** Sprint 1 completo (design system Gipsy Pixel + landing page 7 seções) → Sprint 2 em andamento (páginas públicas do ecossistema)
+> **Sessão anterior encerrou em:** Sprint 2 completo → Sprint 3 spec pronta → Supabase criado (smzsdsbddepieznqwnho) → Schema de 12 tabelas especificado em docs/SUPABASE-SCHEMA.md → PRÓXIMO: executar migrations e migrar auth do PocketBase para Supabase
 
 ---
 
@@ -192,6 +192,17 @@ store/
 
 ### Sprint 2 — spec detalhada
 Ver `docs/SPRINT-2.md` — 7 rotas, estrutura de seções, componentes compartilhados PageHero + CTABanner.
+
+### Sprint 3 — spec detalhada
+Ver `docs/SPRINT-3.md` — Auth visual, Dashboard, Feed migration, XP conectado.
+
+### Supabase (Sprint 3+)
+- **Project ID:** smzsdsbddepieznqwnho
+- **URL:** https://smzsdsbddepieznqwnho.supabase.co
+- **Token:** em `.env.local` como `SUPABASE_ACCESS_TOKEN`
+- **Schema:** `docs/SUPABASE-SCHEMA.md` — 12 tabelas prontas para migration
+- **Pendente:** buscar ANON_KEY e SERVICE_ROLE_KEY em Dashboard > Settings > API
+- **Próxima sessão:** executar migrations via MCP supabase, instalar @supabase/supabase-js, migrar auth
 
 ---
 
