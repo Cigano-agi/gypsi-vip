@@ -185,8 +185,8 @@ store/
 | Sprint | Status | Foco |
 |--------|--------|------|
 | 1 | ✅ DONE | Design system Gipsy Pixel + Landing page 7 seções |
-| **2** | 🔴 EM ANDAMENTO | 7 páginas públicas: /guild /cursos /agentes /oportunidades /consultoria /ventures /sobre + correção navbar |
-| 3 | ⬜ | Guild + Auth Supabase + Dashboard XP + migrar 200 membros WhatsApp |
+| 2 | ✅ DONE | 7 páginas públicas: /guild /cursos /agentes /oportunidades /consultoria /ventures /sobre |
+| **3** | 🔴 PRÓXIMO | Auth visual (login/register), Dashboard, Feed/Adventures migração, XP conectado ao backend |
 | 4 | ⬜ | Educação: CRUD cursos, player, Stripe, XP tracking |
 | 5 | ⬜ | Animações Framer Motion, SEO, Core Web Vitals, polish |
 
