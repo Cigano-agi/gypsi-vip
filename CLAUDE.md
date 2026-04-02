@@ -4,7 +4,7 @@
 ## Contexto de engenharia para o Claude Code
 
 > **Última atualização:** 2026-04-02
-> **Sessão anterior encerrou em:** Design system definido via SDD + imagens do designer recebidas + repo subido pro GitHub
+> **Sessão anterior encerrou em:** Sprint 1 completo (design system Gipsy Pixel + landing page 7 seções) → Sprint 2 em andamento (páginas públicas do ecossistema)
 
 ---
 
@@ -184,11 +184,14 @@ store/
 
 | Sprint | Status | Foco |
 |--------|--------|------|
-| **1** | 🔴 PRÓXIMO | Design system + Home completa + responsividade |
-| 2 | ⬜ | Subpages: Consultoria, Cursos, Ventures, Sobre |
+| 1 | ✅ DONE | Design system Gipsy Pixel + Landing page 7 seções |
+| **2** | 🔴 EM ANDAMENTO | 7 páginas públicas: /guild /cursos /agentes /oportunidades /consultoria /ventures /sobre + correção navbar |
 | 3 | ⬜ | Guild + Auth Supabase + Dashboard XP + migrar 200 membros WhatsApp |
 | 4 | ⬜ | Educação: CRUD cursos, player, Stripe, XP tracking |
-| 5 | ⬜ | Assets finais, Framer Motion, SEO, analytics, Core Web Vitals |
+| 5 | ⬜ | Animações Framer Motion, SEO, Core Web Vitals, polish |
+
+### Sprint 2 — spec detalhada
+Ver `docs/SPRINT-2.md` — 7 rotas, estrutura de seções, componentes compartilhados PageHero + CTABanner.
 
 ---
 

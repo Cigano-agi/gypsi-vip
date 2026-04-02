@@ -6,10 +6,10 @@ import { cn } from '@/lib/utils'
 import ButtonGlass from '@/components/ui/ButtonGlass'
 
 const NAV_LINKS = [
-  { label: 'Guild', href: '#section-guild' },
-  { label: 'Cursos', href: '#section-educacao' },
-  { label: 'Ventures', href: '#section-ventures' },
-  { label: 'Consultoria', href: '#section-consultoria' },
+  { label: 'Comunidade', href: '/guild' },
+  { label: 'Cursos', href: '/cursos' },
+  { label: 'Agentes', href: '/agentes' },
+  { label: 'Oportunidades', href: '/oportunidades' },
 ]
 
 export default function Navbar() {
