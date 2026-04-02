@@ -6,9 +6,6 @@ import { PixelBadge } from '@/components/ui/PixelBadge'
 import { PixelButton } from '@/components/ui/PixelButton'
 import { formatCurrency, cn, timeAgo } from '@/lib/utils'
 import { Briefcase, Zap, ExternalLink, Filter, Plus } from 'lucide-react'
-import type { Bounty } from '@/lib/pocketbase/types'
-
-// Add Bounty type to types.ts later, defining here for now
 interface IBounty {
   id: string
   title: string

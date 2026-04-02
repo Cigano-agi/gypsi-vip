@@ -1,178 +1,179 @@
 import Image from 'next/image'
-import Link from 'next/link'
-import { ChevronRight, ArrowUpRight, Zap, Shield, Globe, Star } from 'lucide-react'
-import { cn } from '@/lib/utils'
-import { PixelImage } from '@/components/ui/PixelImage'
+import Navbar from '@/components/layout/Navbar'
+import Footer from '@/components/layout/Footer'
+import SectionDark from '@/components/ui/SectionDark'
+import SectionLight from '@/components/ui/SectionLight'
+import PixelBg from '@/components/ui/PixelBg'
+import ButtonGlass from '@/components/ui/ButtonGlass'
+import ButtonRPG from '@/components/ui/ButtonRPG'
 
-export default function LandingPage() {
+export default function Home() {
   return (
-    <div className="min-h-screen bg-white overflow-x-hidden">
-      {/* Navigation - Floating Pill */}
-      <nav className="fixed top-8 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-5xl nav-pill h-16 flex items-center justify-between px-8 rounded-full">
-        <div className="flex items-center gap-3">
-          <div className="w-6 h-6 bg-black rounded-full flex items-center justify-center text-[10px] text-white font-bold">G</div>
-          <span className="font-bold text-sm tracking-tighter uppercase font-sans">Guild Platform</span>
-        </div>
-        
-        <div className="hidden md:flex items-center gap-10">
-          <Link href="#manifesto" className="text-[11px] font-bold text-gray-400 hover:text-black uppercase tracking-widest transition-colors">Manifesto</Link>
-          <Link href="#lineage" className="text-[11px] font-bold text-gray-400 hover:text-black uppercase tracking-widest transition-colors">Linhagens</Link>
-          <Link href="/bounties" className="text-[11px] font-bold text-gray-400 hover:text-black uppercase tracking-widest transition-colors">Bounties</Link>
-        </div>
+    <>
+      <Navbar />
 
-        <div className="flex items-center gap-4">
-          <Link href="/login" className="text-[11px] font-bold text-gray-400 hover:text-black uppercase tracking-widest transition-colors">Login</Link>
-          <Link href="/register" className="btn-elite btn-elite-primary h-10 px-6 text-[11px] uppercase tracking-wider">
-            Join the Elite
-          </Link>
-        </div>
-      </nav>
-
-      {/* Hero Section - The Dithered Blue Wave */}
-      <section className="hero-gradient-genius dither-overlay pt-64 pb-40 px-6 text-center">
-        <div className="max-w-5xl mx-auto animate-fade-in relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full mb-10">
-            <Star size={12} className="text-white fill-white" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/90">Protocol 001 Active</span>
-          </div>
-
-          <h1 className="text-6xl md:text-[90px] font-normal text-white leading-[1] mb-10 tracking-tight">
-            Construimos produtos com IA <br />
-            e ajudamos você a construir os seus
+      {/* S1 — Hero */}
+      <SectionDark className="relative min-h-screen flex items-center justify-center text-center">
+        <PixelBg src="/images/heroes/hero-home.png" alt="Gipsy VIP hero" priority overlay />
+        <div className="relative z-10 max-w-4xl mx-auto space-y-6 animate-fade-up">
+          <span className="[font-family:var(--font-pixel)] text-xs text-gipsy-gold tracking-widest uppercase">
+            Guild dos Builders de IA
+          </span>
+          <h1 className="[font-family:var(--font-pixel)] text-3xl md:text-5xl leading-tight text-white">
+            Aprenda IA,<br />Vibe Code e<br />construa o futuro
           </h1>
-
-          <p className="text-xl md:text-2xl text-white/70 font-medium leading-relaxed max-w-3xl mx-auto mb-16 italic">
-            A elite dos builders criando ativos de alta velocidade na era do vibe coding. Conhecimento arcano aplicado ao mercado real.
+          <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+            A maior guild de freelancers de IA do Brasil. Aprenda, conecte-se e construa ativos de alto valor.
           </p>
-
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Link href="/register" className="btn-elite bg-white text-black h-14 px-10 text-base font-bold shadow-2xl shadow-blue-900/40 hover:scale-105 transition-transform">
-              Iniciar Sincronização
-            </Link>
-            <Link href="#manifesto" className="btn-elite border-white/30 text-white h-14 px-10 text-base font-bold backdrop-blur-sm hover:bg-white/10 transition-all">
-              Ver Manifesto
-            </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+            <ButtonRPG href="/register">Entrar na Guild</ButtonRPG>
+            <ButtonGlass href="#section-educacao">Explorar</ButtonGlass>
           </div>
         </div>
+      </SectionDark>
 
-        {/* Hero Visual - High End Architecture */}
-        <div className="mt-32 max-w-6xl mx-auto px-4">
-          <div className="relative aspect-[21/9] rounded-[48px] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,102,255,0.3)] animate-float">
-            <PixelImage 
-              src="/images/guild_hero.png" 
-              alt="Elite Architecture" 
-              fill
-              className="border-none"
+      {/* S2 — Educação */}
+      <SectionLight id="theme-trigger" className="scroll-mt-[72px]">
+        <div id="section-educacao" className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+          <div className="rounded-2xl overflow-hidden aspect-[4/3]">
+            <Image
+              src="/images/cards/card-educacao.png"
+              alt="Educação"
+              width={1200}
+              height={900}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+          </div>
+          <div className="space-y-6">
+            <span className="[font-family:var(--font-pixel)] text-xs text-gipsy-blue tracking-widest uppercase">Educação</span>
+            <h2 className="[font-family:var(--font-pixel)] text-2xl md:text-3xl text-gipsy-dark leading-tight">
+              Pare de brincar com o ChatGPT.<br />Aprenda IA de verdade.
+            </h2>
+            <p className="text-gray-600 text-lg leading-relaxed">
+              Cursos, lives e classes com gamificação RPG. Do prompt engineering até automações que geram renda.
+            </p>
+            <ButtonRPG href="/cursos">Ver Cursos</ButtonRPG>
           </div>
         </div>
-      </section>
+      </SectionLight>
 
-      {/* Trust / Stats Section */}
-      <section className="py-32 bg-white relative">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-2 md:grid-cols-4 gap-16">
-          {[
-            { label: 'Total Revenue Generated', value: 'R$ 2.4M+' },
-            { label: 'Active Elite Builders', value: '450+' },
-            { label: 'High-Ticket Bounties', value: '120+' },
-            { label: 'Success Velocity', value: '94%' },
-          ].map((stat, i) => (
-            <div key={i} className="space-y-3">
-              <p className="text-[10px] font-black text-gray-300 uppercase tracking-[0.2em]">{stat.label}</p>
-              <p className="text-4xl font-normal text-black tracking-tighter">
-                {stat.value}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Lineage Section - Elegant Bento */}
-      <section id="lineage" className="py-40 px-6 max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-32">
-          <div className="max-w-2xl space-y-6 text-left">
-            <h2 className="text-5xl md:text-7xl font-normal text-black tracking-tight leading-none uppercase">Escolha sua <br/> linhagem.</h2>
-            <p className="text-gray-500 text-2xl font-medium italic">Especialização é a única forma de atingir a performance de elite na era da IA.</p>
+      {/* S3 — Ventures */}
+      <SectionDark id="section-ventures">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+          <div className="space-y-6 order-2 md:order-1">
+            <span className="[font-family:var(--font-pixel)] text-xs text-gipsy-purple tracking-widest uppercase">Ventures</span>
+            <h2 className="[font-family:var(--font-pixel)] text-2xl md:text-3xl text-white leading-tight">
+              Ferramentas que procuramos,<br />não achamos, e criamos.
+            </h2>
+            <p className="text-white/70 text-lg leading-relaxed">
+              SARGENTO AI e outros produtos nascidos da necessidade real de quem trabalha com IA todos os dias.
+            </p>
+            <ButtonGlass href="/ventures">Ver Ventures</ButtonGlass>
           </div>
-          <Star size={40} className="text-gray-100 hidden md:block" />
+          <div className="rounded-2xl overflow-hidden aspect-[4/3] order-1 md:order-2">
+            <Image
+              src="/images/cards/card-ventures.png"
+              alt="Ventures"
+              width={1200}
+              height={900}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
+      </SectionDark>
 
-        <div className="grid md:grid-cols-3 gap-10">
-          {[
-            { 
-              title: 'Ladino', 
-              tagline: 'Revenue Frontline',
-              desc: 'Vendas de alto ticket e estratégias de fechamento rápido. Especialista em conversão humana potencializada por agentes.',
-              icon: Zap,
-              color: 'text-amber-500',
-              bg: 'bg-amber-50/30'
-            },
-            { 
-              title: 'Mago', 
-              tagline: 'System Architect',
-              desc: 'Arquitetos de automação e designers de fluxo. O cérebro por trás da escala infinita e infraestrutura invisível.',
-              icon: Shield,
-              color: 'text-purple-500',
-              bg: 'bg-purple-50/30'
-            },
-            { 
-              title: 'Mercador', 
-              tagline: 'Asset Strategy',
-              desc: 'Donos de produto e estrategistas de negócio. Construindo ativos de longo prazo e modelos de receita recorrente.',
-              icon: Globe,
-              color: 'text-emerald-500',
-              bg: 'bg-emerald-50/30'
-            }
-          ].map((path, i) => (
-            <div key={i} className={cn("p-12 card-elite flex flex-col items-start gap-8 group hover:bg-gray-50", path.bg)}>
-              <div className={cn("w-14 h-14 flex items-center justify-center rounded-3xl bg-white shadow-xl shadow-black/5 group-hover:scale-110 transition-transform", path.color)}>
-                <path.icon size={28} />
+      {/* S4 — Consultoria */}
+      <SectionLight id="section-consultoria">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+          <div className="rounded-2xl overflow-hidden aspect-[4/3]">
+            <Image
+              src="/images/cards/card-consultoria.png"
+              alt="Consultoria"
+              width={1200}
+              height={900}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="space-y-6">
+            <span className="[font-family:var(--font-pixel)] text-xs text-gipsy-gold tracking-widest uppercase">Consultoria</span>
+            <h2 className="[font-family:var(--font-pixel)] text-2xl md:text-3xl text-gipsy-dark leading-tight">
+              Diagnóstico e implementação<br />de IA no seu negócio.
+            </h2>
+            <p className="text-gray-600 text-lg leading-relaxed">
+              Empresas que implementam IA estão tendo resultados extraordinários. A Gipsy VIP foi criada pra você fazer parte desse grupo.
+            </p>
+            <ButtonRPG href="/consultoria">Falar com a Gente</ButtonRPG>
+          </div>
+        </div>
+      </SectionLight>
+
+      {/* S5 — Guild */}
+      <SectionDark className="relative min-h-[70vh] flex items-center justify-center text-center" id="section-guild">
+        <PixelBg src="/images/heroes/hero-guild.jpg" alt="Guild" overlay overlayOpacity={0.5} />
+        <div className="relative z-10 max-w-3xl mx-auto space-y-8">
+          <span className="[font-family:var(--font-pixel)] text-xs text-gipsy-green tracking-widest uppercase">Comunidade</span>
+          <h2 className="[font-family:var(--font-pixel)] text-2xl md:text-4xl text-white leading-tight">
+            A maior guild de builders de IA do Brasil
+          </h2>
+          <div className="grid grid-cols-3 gap-8">
+            {[
+              { value: '200+', label: 'Membros' },
+              { value: '3', label: 'Classes' },
+              { value: '10K+', label: 'XP Acumulado' },
+            ].map((s) => (
+              <div key={s.label} className="space-y-1">
+                <p className="[font-family:var(--font-pixel)] text-2xl text-gipsy-gold">{s.value}</p>
+                <p className="text-white/60 text-sm">{s.label}</p>
               </div>
-              <div className="space-y-4">
-                <div className="space-y-1">
-                  <span className="text-[10px] font-black uppercase tracking-[0.3em] opacity-40">{path.tagline}</span>
-                  <h3 className="text-4xl font-normal text-black">{path.title}</h3>
+            ))}
+          </div>
+          <ButtonRPG href="/register">Entrar na Guild (grátis)</ButtonRPG>
+        </div>
+      </SectionDark>
+
+      {/* S6 — Social Proof */}
+      <SectionLight id="section-social-proof">
+        <div className="max-w-6xl mx-auto space-y-12">
+          <h2 className="[font-family:var(--font-pixel)] text-2xl text-gipsy-dark text-center">
+            O que dizem os membros
+          </h2>
+          <div className="flex gap-6 overflow-x-auto pb-4 snap-x">
+            {[
+              {
+                quote: 'A Guild mudou como eu trabalho com IA. Em 2 meses triplicou minha receita.',
+                author: 'Carlos M.',
+                role: 'Automação de Vendas',
+              },
+              {
+                quote: 'Finalmente uma comunidade que entrega resultado. Sem enrolação.',
+                author: 'Ana R.',
+                role: 'Freelancer de IA',
+              },
+              {
+                quote: 'O SARGENTO e os cursos da Guild são o combo que faltava no mercado.',
+                author: 'Felipe S.',
+                role: 'Dev + IA',
+              },
+            ].map((t, i) => (
+              <div
+                key={i}
+                className="min-w-[300px] max-w-[380px] snap-start glass-light rounded-2xl p-8 space-y-4 flex-shrink-0"
+              >
+                <p className="text-gray-700 text-base leading-relaxed italic">&ldquo;{t.quote}&rdquo;</p>
+                <div>
+                  <p className="font-semibold text-gipsy-dark">{t.author}</p>
+                  <p className="text-gray-400 text-sm">{t.role}</p>
                 </div>
-                <p className="text-gray-500 text-lg leading-relaxed font-medium italic">{path.desc}</p>
               </div>
-              <Link href="/register" className="mt-auto flex items-center gap-3 text-[11px] font-black uppercase tracking-widest text-black group-hover:translate-x-2 transition-all">
-                Initialize Path <ArrowUpRight size={16} />
-              </Link>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </section>
+      </SectionLight>
 
-      {/* Footer - Minimalism */}
-      <footer className="py-32 border-t border-gray-100 px-6 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-24 text-center md:text-left bg-white relative z-10">
-        <div className="space-y-8">
-          <div className="flex items-center gap-3 justify-center md:justify-start">
-            <div className="w-6 h-6 bg-black rounded-full"></div>
-            <span className="font-bold text-lg tracking-tighter uppercase">Guild Platform</span>
-          </div>
-          <p className="text-lg text-gray-400 font-medium max-w-xs italic leading-snug">
-            Construindo a infraestrutura para a próxima geração de riqueza gerada por IA.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-2 gap-32">
-          <div className="space-y-6">
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-300">Resources</p>
-            <ul className="space-y-4">
-              <li><Link href="/bounties" className="text-sm font-bold text-gray-500 hover:text-black uppercase tracking-widest transition-colors">Bounties</Link></li>
-              <li><Link href="/ranking" className="text-sm font-bold text-gray-500 hover:text-black uppercase tracking-widest transition-colors">Leaderboard</Link></li>
-            </ul>
-          </div>
-          <div className="space-y-6">
-            <p className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-300">Sync</p>
-            <ul className="space-y-4">
-              <li><Link href="#" className="text-sm font-bold text-gray-500 hover:text-black uppercase tracking-widest transition-colors">Manifesto</Link></li>
-              <li><Link href="#" className="text-sm font-bold text-gray-500 hover:text-black uppercase tracking-widest transition-colors">Terms</Link></li>
-            </ul>
-          </div>
-        </div>
-      </footer>
-    </div>
+      <Footer />
+    </>
   )
 }

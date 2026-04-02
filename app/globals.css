@@ -1,124 +1,76 @@
 @import "tailwindcss";
 
-/* ============================================
-   GUILD — THE "GENIUS" EDITION
-   Refined Dithering & Luxury Pixel Aesthetic
-   ============================================ */
-
+/* Fonte pixel local */
 @font-face {
-  font-family: 'Mondwest';
-  src: url('https://cdn.jsdelivr.net/gh/clshort/mondwest-font@master/Mondwest-Regular.woff2') format('woff2');
+  font-family: 'Dico';
+  src: url('/fonts/Dico.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
+/* Tailwind v4 tokens */
+@theme {
+  --font-pixel: 'Dico', monospace;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --color-gipsy-dark:   #0A0A0A;
+  --color-gipsy-blue:   #3B82F6;
+  --color-gipsy-glow:   #60A5FA;
+  --color-gipsy-gold:   #F59E0B;
+  --color-gipsy-green:  #10B981;
+  --color-gipsy-purple: #8B5CF6;
+}
+
 :root {
-  --bg-primary: #FEFFFC;
-  --donos-blue: #0066FF;
-  --donos-cyan: #00C2FF;
-  
-  --text-primary: #050505;
-  --text-secondary: #4A4A4A;
-  
-  --border-ultra-thin: rgba(0, 0, 0, 0.06);
-  --radius-pill: 9999px;
-  --radius-panel: 32px;
+  --glass-bg:           rgba(255,255,255,0.05);
+  --glass-border:       rgba(255,255,255,0.12);
+  --glass-blur:         12px;
+  --glass-bg-light:     rgba(0,0,0,0.03);
+  --glass-border-light: rgba(0,0,0,0.08);
 }
 
 @layer base {
   body {
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
-    font-family: var(--font-inter), sans-serif;
-    -webkit-font-smoothing: antialiased;
-    selection-background-color: var(--donos-blue);
-    selection-color: white;
-  }
-
-  h1, h2, h3, h4 {
-    font-family: 'Mondwest', sans-serif;
-    font-weight: normal;
-    letter-spacing: -0.03em;
-    text-transform: none;
-  }
-}
-
-@layer components {
-  /* The Secret Sauce: Dithering Overlay */
-  .dither-overlay {
-    position: relative;
-  }
-  
-  .dither-overlay::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIElEQVQIW2NkYGD4D8DAxAADMA5MApXBAZMApXBAJQA59wcGkvvbiwAAAABJRU5ErkJggg==");
-    background-repeat: repeat;
-    opacity: 0.08;
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  /* Donos Floating Nav */
-  .nav-pill {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
-  }
-
-  /* Elegant Cards */
-  .card-elite {
-    background: white;
-    border: 1px solid var(--border-ultra-thin);
-    border-radius: var(--radius-panel);
-    transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
-  }
-
-  .card-elite:hover {
-    transform: translateY(-4px) scale(1.01);
-    border-color: rgba(0, 102, 255, 0.2);
-    box-shadow: 0 30px 60px -12px rgba(0, 102, 255, 0.08);
-  }
-
-  /* Signature Button */
-  .btn-elite {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 14px 32px;
-    font-size: 14px;
-    font-weight: 600;
-    border-radius: var(--radius-pill);
-    transition: all 0.3s ease;
-    letter-spacing: 0.02em;
-  }
-
-  .btn-elite-primary {
-    background: var(--text-primary);
+    font-family: var(--font-body);
+    background: #0A0A0A;
     color: white;
-    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2);
-  }
-
-  .btn-elite-primary:hover {
-    background: #000;
-    transform: translateY(-2px);
-    box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.3);
-  }
-
-  .hero-gradient-genius {
-    background: radial-gradient(circle at 50% -20%, var(--donos-cyan) 0%, var(--donos-blue) 45%, #FFFFFF 95%);
+    -webkit-font-smoothing: antialiased;
   }
 }
 
-/* Animations */
-.animate-float {
-  animation: float 6s ease-in-out infinite;
+/* Text selection override — assinatura visual */
+.section-dark ::selection  { background: #000; color: #fff; }
+.section-light ::selection { background: #000; color: #fff; }
+
+/* Pixel rendering */
+.pixel-render {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+/* Glassmorphism base */
+.glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
 }
+.glass-light {
+  background: var(--glass-bg-light);
+  border: 1px solid var(--glass-border-light);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+}
+
+/* Animações */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes glassShine {
+  from { left: -100%; }
+  to   { left: 100%; }
+}
+.animate-fade-up { animation: fadeUp 0.6s cubic-bezier(0.4,0,0.2,1) forwards; }
