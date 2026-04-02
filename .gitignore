@@ -36,6 +36,15 @@ yarn-error.log*
 # vercel
 .vercel
 
+# pocketbase
+/pocketbase/pb_data/
+/pocketbase/pocketbase.exe
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# logs e outputs de setup
+error.log
+error.txt
+setup_output.txt
