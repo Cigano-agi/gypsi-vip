@@ -39,6 +39,17 @@
   }
 }
 
+/* Section backgrounds — explícitos para garantir override do body */
+.section-dark {
+  background-color: #0A0A0A;
+  color: #ffffff;
+}
+
+.section-light {
+  background-color: #ffffff;
+  color: #0A0A0A;
+}
+
 /* Text selection override — assinatura visual */
 .section-dark ::selection  { background: #000; color: #fff; }
 .section-light ::selection { background: #000; color: #fff; }
