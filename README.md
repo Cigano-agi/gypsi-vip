@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Gypsi.vip — Guild RPG for AI Freelancers
 
-## Getting Started
+> Form a crew, level up together, and land real missions — the freelance platform that treats collaboration like a game.
 
-First, run the development server:
+![Demo GIF em breve](https://placehold.co/800x400?text=Demo+GIF+em+breve)
+
+---
+
+## What it is
+
+**Gypsi.vip** is a Guild RPG platform where freelancers who work with AI form parties, complete missions (paid gigs), and build reputation on a shared leaderboard. Think LinkedIn meets Dungeons & Dragons — but for builders who ship with Claude, GPT, and Cursor.
+
+---
+
+## Why it exists
+
+Solo freelancing with AI is powerful but lonely. Finding collaborators with complementary skills — a designer, a backend dev, a prompt engineer — still happens over DMs and LinkedIn cold-reaches. Gypsi.vip replaces that friction with a game loop: join a guild, pick a role, accept a mission together. Your reputation is your character sheet, and your portfolio is your loot.
+
+---
+
+## Built with
+
+- **Next.js 14** (App Router) + TypeScript
+- Deployed at [gypsi.vip](https://gypsi.vip)
+
+---
+
+## Development
 
 ```bash
+git clone https://github.com/Cigano-agi/gypsi-vip.git
+cd gypsi-vip
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## License
 
-## Learn More
+Proprietary — all rights reserved.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*Built by [@cigano.agi](https://github.com/Cigano-agi) — join 2.800+ AI builders at [Athena.agi](https://athena.agi)*
